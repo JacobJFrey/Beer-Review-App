@@ -8,7 +8,7 @@
         <div v-if="this.brewery.email != null">📮 {{this.brewery.email}}</div>
 
         <div>Address: {{this.brewery.address}}</div>
-        <div>Address2: {{this.brewery.city}}, {{this.brewery.stateAbv}} {{this.brewery.zipcode}}</div>
+        <div v-if="this.brewery.city!=null || this.brewery.stateAbv!=null || this.brewery.zipcode!=null"> {{this.brewery.city}}, {{this.brewery.stateAbv}} {{this.brewery.zipcode}}</div>
         <div v-if="this.brewery.openTime != null && this.brewery.closeTime != null">Open from {{brewery.openTime}} to {{brewery.closeTime}}  </div>
         <div v-else>Times of Operation have not been posted</div>
         <div>History: {{this.brewery.history}}</div>

@@ -17,6 +17,12 @@
         <input id="close-time" type="time" v-model="brewery.closeTime" />
         <label for="address">Address</label>
         <input id="address" type="text" v-model="brewery.address" />
+        <label for="city">City</label>
+        <input id="city" type="text" v-model="brewery.city" />
+        <label for="stateAbv">State</label>
+        <input id="stateAbv" type="text" v-model="brewery.stateAbv" />
+        <label for="zipcode">Zip Code</label>
+        <input id="zipcode" type="text" v-model="brewery.zipcode" />
         <label for="history">History</label>
         <input id="history" type="text" v-model="brewery.history" />
         <button type="submit">Register</button>
@@ -33,15 +39,21 @@ export default {
     data() {
         return {
             brewery: {
+                id: "",
                 breweryName: "",
                 contactInfo: "",
-                phone:"",
                 website:"",
+                phone:"",
+                email:"",
                 openTime: "",
                 closeTime: "",
                 address: "",
+                city: "",
+                stateAbv: "",
+                zipcode: "",
                 history: "",
-            }
+                isOpen: ""
+            },
         }
     },
     methods: {
@@ -60,15 +72,6 @@ export default {
 
 .brewery-reg {
     align-self: center;
-}
-
-input,
-.submit {
-    width: 100px;
-}
-
-#address {
-    height: 100px;
 }
 
 #history {

@@ -18,6 +18,8 @@ import UserHome from '../views/UserHome'
 import UpdateBeer from '../views/UpdateBeer'
 import ReviewsPerBrewery from "../views/ReviewsPerBrewery"
 
+import Error from "../views/Error.vue"
+
 Vue.use(Router)
 
 /**
@@ -146,20 +148,25 @@ const router = new Router({
       }
     },
     {
-      path: "/beer/update",
-      name: "beer-update",
-      component: UpdateBeer,
+    path: "/beer/update",
+    name: "beer-update",
+    component: UpdateBeer,
+    meta: {
+      requiresAuth: true
+      }
+    },
+    {
+      path: "/brewery/:breweryId/reviews",
+      name: "brewery-reviews",
+      component: ReviewsPerBrewery,
       meta: {
         requiresAuth: true
-        }
-      },
-      {
-        path: "/brewery/:breweryId/reviews",
-        name: "brewery-reviews",
-        component: ReviewsPerBrewery,
-        meta: {
-          requiresAuth: true
-        }
+      }
+    },
+    {
+      path: "/error",
+      name: "Error",
+      component: Error,
     },
   ]
 })
